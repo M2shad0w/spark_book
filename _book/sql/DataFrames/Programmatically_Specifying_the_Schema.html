@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>通过编程接口指定Schema | Spark-learning</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.6">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../expand_read/mysql2spark.html" />
+    
+    
+    <link rel="prev" href="../../sql/DataFrames/Inferring_the_Schema_Using_Reflection.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.1.5.2"
+        data-chapter-title="通过编程接口指定Schema"
+        data-filepath="sql/DataFrames/Programmatically_Specifying_the_Schema.md"
+        data-basepath="../.."
+        data-revision="Thu Aug 25 2016 09:56:36 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="howtouse/index.html">
+            
+                
+                    <a href="../../howtouse/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        基本安装
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="howtouse/SparkInstall.html">
+            
+                
+                    <a href="../../howtouse/SparkInstall.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Spark安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="howtouse/playwithSparkShell.html">
+            
+                
+                    <a href="../../howtouse/playwithSparkShell.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Spark Shell
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="sql/index.html">
+            
+                
+                    <a href="../../sql/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Spark SQL
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="sql/DataFrames.html">
+            
+                
+                    <a href="../../sql/DataFrames.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        DataFrames
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="sql/DataFrames/index.html">
+            
+                
+                    <a href="../../sql/DataFrames/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                        SQLContext
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="sql/DataFrames/CreatingDataFrames.html">
+            
+                
+                    <a href="../../sql/DataFrames/CreatingDataFrames.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.2.</b>
+                        
+                        创建DataFrames
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="sql/DataFrames/DataFrameOperations.html">
+            
+                
+                    <a href="../../sql/DataFrames/DataFrameOperations.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.3.</b>
+                        
+                        DataFrame操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="sql/DataFrames/RunningSQL_QueriesProgrammatically.html">
+            
+                
+                    <a href="../../sql/DataFrames/RunningSQL_QueriesProgrammatically.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.4.</b>
+                        
+                        运行SQL查询程序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="sql/DataFrames/InteroperatingwithRDDs.html">
+            
+                
+                    <a href="../../sql/DataFrames/InteroperatingwithRDDs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.5.</b>
+                        
+                        DataFrames与RDDs的相互转换
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.5.1" data-path="sql/DataFrames/Inferring_the_Schema_Using_Reflection.html">
+            
+                
+                    <a href="../../sql/DataFrames/Inferring_the_Schema_Using_Reflection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.5.1.</b>
+                        
+                        使用反射获取Schema
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.5.2" data-path="sql/DataFrames/Programmatically_Specifying_the_Schema.html">
+            
+                
+                    <a href="../../sql/DataFrames/Programmatically_Specifying_the_Schema.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.5.2.</b>
+                        
+                        通过编程接口指定Schema
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="expand_read/mysql2spark.html">
+            
+                
+                    <a href="../../expand_read/mysql2spark.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Spark拓展阅读
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Spark-learning</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x901A;&#x8FC7;&#x7F16;&#x7A0B;&#x63A5;&#x53E3;&#x6307;&#x5B9A;schema">&#x901A;&#x8FC7;&#x7F16;&#x7A0B;&#x63A5;&#x53E3;&#x6307;&#x5B9A;Schema</h1>
+<p>&#x5F53;JavaBean&#x4E0D;&#x80FD;&#x88AB;&#x9884;&#x5148;&#x5B9A;&#x4E49;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7F16;&#x7A0B;&#x521B;&#x5EFA;DataFrame&#x5206;&#x4E3A;&#x4E09;&#x6B65;&#xFF1A;</p>
+<ul>
+<li>&#x4ECE;&#x539F;&#x6765;&#x7684;RDD&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Row&#x683C;&#x5F0F;&#x7684;RDD</li>
+<li>&#x521B;&#x5EFA;&#x4E0E;RDD&#x4E2D;Rows&#x7ED3;&#x6784;&#x5339;&#x914D;&#x7684;StructType&#xFF0C;&#x901A;&#x8FC7;&#x8BE5;StructType&#x521B;&#x5EFA;&#x8868;&#x793A;RDD&#x7684;Schema</li>
+<li>&#x901A;&#x8FC7;SQLContext&#x63D0;&#x4F9B;&#x7684;createDataFrame&#x65B9;&#x6CD5;&#x521B;&#x5EFA;DataFrame&#xFF0C;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x4E3A;RDD&#x7684;Schema</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.spark.api.java.function.Function;
+<span class="hljs-comment">// Import factory methods provided by DataTypes.</span>
+<span class="hljs-keyword">import</span> org.apache.spark.sql.types.DataTypes;
+<span class="hljs-comment">// Import StructType and StructField</span>
+<span class="hljs-keyword">import</span> org.apache.spark.sql.types.StructType;
+<span class="hljs-keyword">import</span> org.apache.spark.sql.types.StructField;
+<span class="hljs-comment">// Import Row.</span>
+<span class="hljs-keyword">import</span> org.apache.spark.sql.Row;
+<span class="hljs-comment">// Import RowFactory.</span>
+<span class="hljs-keyword">import</span> org.apache.spark.sql.RowFactory;
+
+<span class="hljs-comment">// sc is an existing JavaSparkContext.</span>
+SQLContext sqlContext = <span class="hljs-keyword">new</span> org.apache.spark.sql.SQLContext(sc);
+
+<span class="hljs-comment">// Load a text file and convert each line to a JavaBean.</span>
+JavaRDD&lt;String&gt; people = sc.textFile(<span class="hljs-string">&quot;examples/src/main/resources/people.txt&quot;</span>);
+
+<span class="hljs-comment">// The schema is encoded in a string</span>
+String schemaString = <span class="hljs-string">&quot;name age&quot;</span>;
+
+<span class="hljs-comment">// Generate the schema based on the string of schema</span>
+List&lt;StructField&gt; fields = <span class="hljs-keyword">new</span> ArrayList&lt;StructField&gt;();
+<span class="hljs-keyword">for</span> (String fieldName: schemaString.split(<span class="hljs-string">&quot; &quot;</span>)) {
+  fields.add(DataTypes.createStructField(fieldName, DataTypes.StringType, <span class="hljs-keyword">true</span>));
+}
+StructType schema = DataTypes.createStructType(fields);
+
+<span class="hljs-comment">// Convert records of the RDD (people) to Rows.</span>
+JavaRDD&lt;Row&gt; rowRDD = people.map(
+  <span class="hljs-keyword">new</span> Function&lt;String, Row&gt;() {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Row <span class="hljs-title">call</span><span class="hljs-params">(String record)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+      String[] fields = record.split(<span class="hljs-string">&quot;,&quot;</span>);
+      <span class="hljs-keyword">return</span> RowFactory.create(fields[<span class="hljs-number">0</span>], fields[<span class="hljs-number">1</span>].trim());
+    }
+  });
+
+<span class="hljs-comment">// Apply the schema to the RDD.</span>
+DataFrame peopleDataFrame = sqlContext.createDataFrame(rowRDD, schema);
+
+<span class="hljs-comment">// Register the DataFrame as a table.</span>
+peopleDataFrame.registerTempTable(<span class="hljs-string">&quot;people&quot;</span>);
+
+<span class="hljs-comment">// SQL can be run over RDDs that have been registered as tables.</span>
+DataFrame results = sqlContext.sql(<span class="hljs-string">&quot;SELECT name FROM people&quot;</span>);
+
+<span class="hljs-comment">// The results of SQL queries are DataFrames and support all the normal RDD operations.</span>
+<span class="hljs-comment">// The columns of a row in the result can be accessed by ordinal.</span>
+List&lt;String&gt; names = results.javaRDD().map(<span class="hljs-keyword">new</span> Function&lt;Row, String&gt;() {
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">call</span><span class="hljs-params">(Row row)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Name: &quot;</span> + row.getString(<span class="hljs-number">0</span>);
+  }
+}).collect();
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../sql/DataFrames/Inferring_the_Schema_Using_Reflection.html" class="navigation navigation-prev " aria-label="Previous page: 使用反射获取Schema"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../expand_read/mysql2spark.html" class="navigation navigation-next " aria-label="Next page: Spark拓展阅读"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

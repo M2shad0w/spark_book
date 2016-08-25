@@ -1,0 +1,3 @@
+# DataFrames
+DataFrame是一个分布式的数据集合，该数据集合以命名列的方式进行整合。DataFrame可以理解为关系数据库中的一张表，也可以理解为R/Python中的一个data frame。DataFrames可以通过多种数据构造，例如：结构化的数据文件、hive中的表、外部数据库、Spark计算过程中生成的RDD等。
+DataFrame的API支持4种语言：Scala、Java、Python、R。
