@@ -11,5 +11,4 @@
   	- [运行SQL查询程序](sql/DataFrames/RunningSQL_QueriesProgrammatically.md)
   	- [DataFrames与RDDs的相互转换](sql/DataFrames/InteroperatingwithRDDs.md)
 * [搭建hadoop集群](hadoop/README.md)
-  -
 * [Spark拓展阅读](expand_read/mysql2spark.md)
